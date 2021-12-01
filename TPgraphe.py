@@ -12,21 +12,20 @@ print(tab)
 #6.1
 def ordre(mat):
 
-
-    return
+    pass
 
 #6.2
 
 def degre(s):
 
-    return
+    pass
 
 #6.3
 
 def existeChemin(a,b):
 
 
-    return
+    pass
 
 ##Exercice 7 et 8
 
