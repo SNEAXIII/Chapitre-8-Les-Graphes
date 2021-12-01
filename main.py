@@ -6,6 +6,8 @@ from time import time
 def creerListe(n):
     return [[False] * n for _ in range(n)]
 
+def print_matrice(mat):
+  for a in mat: print(a)
 
 #Question 1 : Expliquez comment, avec les instructions données, le tableau a pu se créer ainsi
 
@@ -30,12 +32,15 @@ def liste_scrp(n):
 
 
 liste = liste_scrp(3)
-liste[0]
+liste[0][1] = liste[2][1] =liste[1][2]= True
+print_matrice(liste)
+
 
 ##Exercice 6 : Programmez les algorithmes demandé dans cet exercice
 
 
 #6.1
+
 def ordre(mat):
     return len(mat)
 
@@ -43,18 +48,17 @@ ordre(liste)
 
 #6.2
 
-def degre(s):
-    return s.count(True)
+def degre(mat,s):
+    return mat[s].count(True)
 
-degre()
+print(degre(liste,0))
 
 #6.3
 
+def existeChemin(mat,a, b):
+    return mat[a][b]
 
-def existeChemin(a, b):
-
-    pass
-
+print(existeChemin(liste,1,2))
 
 ##Exercice 7 et 8
 
@@ -67,12 +71,19 @@ class Graphe:
 
     def ajouterArete(self, s1, s2):
         """crée l'arete orientée s1->s2"""
+        self.adj[s1][s2] = True
 
     def arete(self, s1, s2):
         """teste si l'arete orientée s1->s2 existe"""
+        if s1 > len(self.adj)-1 or s2 > len(self.adj)-1:
+            return None
+        return self.adj[s1][s2]
 
     def voisins(self, s):
         """renvoie la liste des sommets voisins de s"""
+        liste = []
+        if self.adj[s][len(self.adj)]: liste.append
+        return
 
     def afficher(self):
         """affiche les sommets avec leurs voisins selon la représentation choisie"""
