@@ -123,9 +123,9 @@ testomatic(False,res1)
 test.printer()
 print(test.afficher())
 
-##Exercice 9 : Programmez les méthodes de la classe Graphe2
+##Exercice 9 : Programmez les méthodes de la classe Graphe2 ET 10
 
-#utiliser discard pr suppr un élément dans les sets
+
 
 class Graphe2:
     """un graphe défini comme un disctionnaire d'adjacence"""
@@ -138,7 +138,7 @@ class Graphe2:
 
     def ajouterArete(self, s1, s2):
         """crée l'arete orientée s1->s2, en créeant si besoin est le/s sommet/s manquant"""
-        keys_ = [keys_ for keys_ in self.adj]
+        keys_ = set(keys_ for keys_ in self.adj)
         if not s1 in keys_ : self.ajouterSommet(s1)
         if not s2 in keys_ : self.ajouterSommet(s2)
         self.adj[s1].add(s2)
@@ -150,11 +150,19 @@ class Graphe2:
 
     def sommets(self):
         """renvoie al liste des sommets qui composent le graphe"""
-        return [keys_ for keys_ in self.adj]
+        return set(keys_ for keys_ in self.adj)
 
     def voisins(self, s):
         """renvoie la liste des sommets voisins de s"""
-        return [values for values in self.adj[s]]
+        return set(values for values in self.adj[s])
+
+    def supprArete(self,s1,s2):
+        """supprime l'arete de s1 -> s2"""
+        self.adj[s1].discard(s2)
+
+    def supprSommet(self,s):
+        """"""
+        del(self.adj[s])
 
     def afficher(self):
         """affiche les sommets avec leurs voisins selon la représentation choisie"""
@@ -165,5 +173,7 @@ graph_.ajouterArete('A','B')
 graph_.ajouterArete('A','C')
 graph_.ajouterArete('C','A')
 graph_.ajouterArete('B','A')
-graph_.voisins('A')
+print(graph_.sommets())
+print(graph_.voisins('A'))
+graph_.supprArete('A','C')
 print(graph_.adj)
