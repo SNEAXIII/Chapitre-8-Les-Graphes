@@ -196,6 +196,7 @@ def coloriage(graph):
             if not sommet in dico_rez[0][coul] :
                 dico_rez[0][coul].add(sommet)
                 dico_rez[1] += 1
+                break
                 
         
 """
@@ -207,7 +208,7 @@ sinon -> on lui donne la plus petite valeur
 on renvoie un dico avec sommet,coul à chaque fois
 on renvoie le nbr de coul
 """
-
+coloriage(graph_)
 
 
 #https://github.com/SNEAXIII/Chapitre-8-Les-Graphes/blob/main/main.py
