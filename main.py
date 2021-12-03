@@ -161,11 +161,12 @@ class Graphe2:
         self.adj[s1].discard(s2)
 
     def supprSommet(self,s):
-        """"""
+        """supprime le sommet s du dictionnaire"""
         del(self.adj[s])
 
     def afficher(self):
         """affiche les sommets avec leurs voisins selon la représentation choisie"""
+        # pas demandé dans les consignes
 
 
 graph_ = Graphe2('Nothing is True')
@@ -177,3 +178,6 @@ print(graph_.sommets())
 print(graph_.voisins('A'))
 graph_.supprArete('A','C')
 print(graph_.adj)
+
+##Exercice 11 : Coloriage !
+
