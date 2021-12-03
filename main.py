@@ -188,12 +188,15 @@ graph_.afficher()
 
 def coloriage(graph):
     """renvoie le dictionnaire des couleurs associés aux sommet et le nombre de couleurs"""
-    dico_rez = [[],1] # [(1,{a,b,c}),[2,[a,b,c]]]
+    dico_rez = [[(set(graph[0]))],1] # [(coul,{a,b,c}),[coul,[a,b,c]], nbr_coul]
     
-    for sommet in graph.adj :
+    for sommet in graph.adj[1:] :
         voisins = graph.voisins(sommet)
-        for a in range(dico_rez[1]):
-            
+        for coul in range(dico_rez[1]) :
+            if not sommet in dico_rez[0][coul] :
+                dico_rez[0][coul].add(sommet)
+                dico_rez[1] += 1
+                
         
 """
 pour sommet dans le graph :
