@@ -126,7 +126,6 @@ print(test.afficher())
 ##Exercice 9 : Programmez les méthodes de la classe Graphe2 ET 10
 
 
-
 class Graphe2:
     """un graphe défini comme un disctionnaire d'adjacence"""
     def __init__(self, n):
@@ -166,18 +165,46 @@ class Graphe2:
 
     def afficher(self):
         """affiche les sommets avec leurs voisins selon la représentation choisie"""
-        # pas demandé dans les consignes
+
+        for a in list(self.adj.items()):
+          print(a)
 
 
 graph_ = Graphe2('Nothing is True')
 graph_.ajouterArete('A','B')
 graph_.ajouterArete('A','C')
 graph_.ajouterArete('C','A')
+graph_.ajouterArete('B','D')
+graph_.ajouterArete('D','C')
+graph_.ajouterArete('A','D')
+graph_.ajouterArete('D','B')
 graph_.ajouterArete('B','A')
-print(graph_.sommets())
+graph_.ajouterArete('B','C')
 print(graph_.voisins('A'))
-graph_.supprArete('A','C')
-print(graph_.adj)
+print(graph_.sommets())
+graph_.afficher()
 
 ##Exercice 11 : Coloriage !
 
+def coloriage(graph):
+    """renvoie le dictionnaire des couleurs associés aux sommet et le nombre de couleurs"""
+    dico_rez = [[],1] # [(1,{a,b,c}),[2,[a,b,c]]]
+    
+    for sommet in graph.adj :
+        voisins = graph.voisins(sommet)
+        for a in range(dico_rez[1]):
+            
+        
+"""
+pour sommet dans le graph :
+on définit les voisins avec la méthode
+on parcourt les voisins et on cherche si 0 / 1 / 2 / 3 / n-1 est déjà pris
+si oui -> on ajoute un coul pour sommet
+sinon -> on lui donne la plus petite valeur
+on renvoie un dico avec sommet,coul à chaque fois
+on renvoie le nbr de coul
+"""
+
+
+
+#https://github.com/SNEAXIII/Chapitre-8-Les-Graphes/blob/main/main.py
