@@ -1,4 +1,4 @@
-class Grapheprout:
+class Graphe:
     """un graphe défini comme un dictionnaire d'adjacence"""
 
     def __init__(self):

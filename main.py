@@ -14,8 +14,13 @@ chateau.ajouterArete('C','E')
 chateau.afficher()
 #Exercice 2
 def parcoursProf1(g,s):
+    assert s in g, "le sommet est pas dans le graphe"
     rez = set(s)
-    a_visiter = pile 
+    a_visiter = Pile().empiler(s)
+    while a_visiter != None :
+        sommet = a_visiter.depiler()
+        #ps
+
 
 def existeChemin(g,s1,s2):
 
@@ -72,3 +77,4 @@ def chercheCycle_S(g,marques,s):
 """Programmez la ou les fonctions nécéssaires pour réaliser le parcours en largeur d'un graphe"""
 
 
+    

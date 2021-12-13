@@ -80,6 +80,9 @@ class Pile:
     def empiler(self, x):
         self.contenu = Cellule(x, self.contenu)
 
+    def multiempile(self,elems):
+      for elem in elems: self.empiler(elem)
+
     def estVide(self):
         return self.contenu is None
 
